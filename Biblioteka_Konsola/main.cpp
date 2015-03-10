@@ -52,7 +52,7 @@ int main(void)
 		return 10;
 	}
 
-	if(zalogowany) cout << "----------WITAMY W SYSTEMIE----------" << endl << endl;
+	if(zalogowany) cout << "----------WITAMY W SYSTEMIE----------" << endl << "Synu, nawet nie masz pojecia, na jak nieograniczone mozliwosci wlasnie trafiles" << endl;
 	
 	system("PAUSE");
 	return 0;
