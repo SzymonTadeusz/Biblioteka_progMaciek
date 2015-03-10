@@ -3,13 +3,9 @@
 #include <string>
 #include <conio.h>
 
-//!!
-//UWAGA ROBIE NIESAMOWICIE WA¯N¥ ZMIANÊ W KODZIE!!
-//!!
 
 using namespace std;
 
-//w tej linijce zrobiê jak¹œ zmianê
 int main(void)
 {
 	fstream plik;
@@ -28,8 +24,6 @@ int main(void)
 		cin >> login;
 		cout << "Podaj haslo: ";
 		cin >> haslo;
-
-		// stad wywalilem pare smieci
 		
 		plik.open("users.dat", std::ios::in | std::ios::out );
 		if(plik.good() == true)
