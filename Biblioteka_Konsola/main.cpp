@@ -24,26 +24,8 @@ int main(void)
 		cin >> login;
 		cout << "Podaj haslo: ";
 		cin >> haslo;
-		
-		/*c = getch();
-		while (c != 13)
-		{
-        if(c == 8)
-        {
-            haslo = haslo.substr(0, haslo.length() -1);
-            StarNum--;
-            cntStar = StarNum;
-            system("cls");
-            while (cntStar > 0){ cout << "*"; cntStar--;}
-        }
-        else
-        {
-            StarNum++;
-            haslo += c;
-            cout << "*";
-        }
-		c = (char)getch();
-		}*/
+
+		// stad wywalilem pare smieci
 		
 		plik.open("users.dat", std::ios::in | std::ios::out );
 		if(plik.good() == true)
