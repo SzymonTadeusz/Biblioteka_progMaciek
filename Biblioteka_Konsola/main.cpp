@@ -3,6 +3,10 @@
 #include <string>
 #include <conio.h>
 
+//!!
+//UWAGA ROBIE NIESAMOWICIE WA¯N¥ ZMIANÊ W KODZIE!!
+//!!
+
 using namespace std;
 
 //w tej linijce zrobiê jak¹œ zmianê
