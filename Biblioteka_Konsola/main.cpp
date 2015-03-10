@@ -5,7 +5,7 @@
 
 using namespace std;
 
-
+//w tej linijce zrobiê jak¹œ zmianê
 int main(void)
 {
 	fstream plik;
