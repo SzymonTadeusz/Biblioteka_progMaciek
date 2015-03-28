@@ -6,17 +6,20 @@
 
 #include "Ksiazka.h"
 
+using namespace std;
 
- /* Katalog dzieli ca³¹ literaturê na:
- * - piêkn¹
- * - naukow¹
- * - beletrystykê*/
+ //Katalog dzieli ca³¹ literaturê na:
+ //* - piêkn¹
+ //* - naukow¹
+ //* - beletrystykê
 class Katalog {
 private:
-	std::string NazwaKatalogu;
-	Ksiazka ListaKsiazek[100];
+	string NazwaKatalogu;
+	Ksiazka* ListaKsiazek[100];
 
 public:
+	Katalog();
+	~Katalog();
 	void WyswietlKatalog();
 	void WyswietlKsiazke(int indKsi);
 };

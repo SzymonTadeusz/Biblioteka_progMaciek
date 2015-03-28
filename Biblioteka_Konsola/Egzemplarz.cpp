@@ -6,6 +6,13 @@
 
 #include "Egzemplarz.h"
 
+Egzemplarz::Egzemplarz()
+{
+}
+
+Egzemplarz::~Egzemplarz()
+{
+}
 
 void Egzemplarz::wypozycz()
 {

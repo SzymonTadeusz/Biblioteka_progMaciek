@@ -13,4 +13,6 @@ private:
 
 public:
 	void wypozycz();
+	Egzemplarz();
+	~Egzemplarz();
 };
