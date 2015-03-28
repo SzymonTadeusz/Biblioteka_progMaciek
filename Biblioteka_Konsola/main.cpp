@@ -12,7 +12,7 @@ int main()
 	while (decyzja != 0)
 	{
 		system("CLS");
-		cout << "****Witamy w programie bibliotecznym****\n";
+		cout << "****Witamy w programie bibliotecznym****" << endl << endl;
 		cout << "Co chcesz zrobic?" << endl;
 		cout << "1. Przegladanie katalogow" << endl;
 		cout << "2. Przegladanie ksiazek w danym katalogu" << endl;
