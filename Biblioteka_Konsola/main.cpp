@@ -6,20 +6,31 @@
 
 
 using namespace std;
-int main(){
-	cout << "****Witamy w programie bibliotecznym****\n";
-	cout << "Co chcesz zrobic? \n 1. Przegladanie katalogow\n 2. Przegladanie ksiazek w danym katalogu\n\n Nacisnij 0 aby wyjsc z programu.\n\n Decyzja:";
-	int decyzja;
-	cin >> decyzja;
-	switch (decyzja)
+int main()
+{
+	int decyzja = 1;
+	while (decyzja != 0)
 	{
-	case 1 :  cout << "katalogi: "; break; 
-	case 2 :  cout << "ksiazki: "; break; 
-	case 0 :  exit(0); break; 
-	default: cout << "niewlasciwa zmienna, program zakonczy dzialanie"; break; 
+		system("CLS");
+		cout << "****Witamy w programie bibliotecznym****\n";
+		cout << "Co chcesz zrobic?" << endl;
+		cout << "1. Przegladanie katalogow" << endl;
+		cout << "2. Przegladanie ksiazek w danym katalogu" << endl;
+		cout << "0. Wyjscie z programu" << endl << endl;
+		cout << "Twoja decyzja: ";
+		cin >> decyzja;
+		switch (decyzja)
+		{
+		case 1:  cout << "katalogi: " << endl;
+			system("PAUSE");
+			break;
+		case 2:  cout << "ksiazki: " << endl;
+			system("PAUSE");
+			break;
+		case 0:  exit(0);
+			break;
+		default: break;
+		}
 	}
-
-	cout << endl;
-	system("pause");
 	return 0;
 }

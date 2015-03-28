@@ -7,23 +7,17 @@
 
 #include "Ksiazka.h"
 
-/**
- * Katalog dzieli ca³¹ literaturê na:
+
+ /* Katalog dzieli ca³¹ literaturê na:
  * - piêkn¹
  * - naukow¹
- * - beletrystykê
- */
-class Katalog
-{
+ * - beletrystykê*/
+class Katalog {
 private:
 	std::string NazwaKatalogu;
-
 	Ksiazka ListaKsiazek[100];
-
 
 public:
 	void WyswietlKatalog();
-
 	void WyswietlKsiazke(int indKsi);
-
 };

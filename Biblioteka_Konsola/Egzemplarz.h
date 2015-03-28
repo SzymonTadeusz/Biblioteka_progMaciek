@@ -6,17 +6,12 @@
 #include <assert.h>
 
 
-class Egzemplarz
-{
+class Egzemplarz {
 private:
 	int NrKatalogowy;
-
 	bool CzyWypozyczona;
-
 	int DoKiedyWypozyczona;
-
 
 public:
 	void wypozycz();
-
 };
