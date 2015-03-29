@@ -63,18 +63,25 @@ void MenadzerBiblioteki::WyswietlMenuGlowne()
 		case 1:
 		{
 			cout << "Katalogi: \n" << endl;
-			cout << "1. Nazwa: ";
-			cout << this->ListaKatalogow[0]->GetNazwa() << endl;
+			for (int i = 0; i < 1; i++)			 // i - nr katalogu
+			{
+				cout << i+1 << ". ";
+				cout << this->ListaKatalogow[0]->GetNazwa() << endl;
+			}
 			system("PAUSE");
 			break;
 		}
 		case 2:
 		{
+			cout << "****************************************\n";
 			cout << "Ksiazki: " << endl;
-			cout << "1. ";
-			this->WyswietlKsiazke(0, 0); cout << endl;
-			cout << "2. ";
-			this->WyswietlKsiazke(0, 1); cout << endl;
+			for (int i = 0; i < 1; i++)			// na razie wygl¹da œmiesznie, ale przyda siê na wiêcej katalogów i ksi¹¿ek
+				for (int j = 0; j < 2; j++)		// i - nr katalogu, j - nr ksi¹¿ki w katalogu
+				{
+					cout << j+1 << ". ";
+					this->WyswietlKsiazke(i, j); cout << endl;
+					cout << "----------------------------------------\n";
+				}
 			system("PAUSE");
 			break;
 		}
