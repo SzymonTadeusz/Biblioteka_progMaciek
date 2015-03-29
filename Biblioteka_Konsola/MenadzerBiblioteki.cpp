@@ -71,8 +71,10 @@ void MenadzerBiblioteki::WyswietlMenuGlowne()
 		case 2:
 		{
 			cout << "Ksiazki: " << endl;
-			cout << "1. Nazwa: ";
+			cout << "1. ";
 			this->WyswietlKsiazke(0, 0); cout << endl;
+			cout << "2. ";
+			this->WyswietlKsiazke(0, 1); cout << endl;
 			system("PAUSE");
 			break;
 		}

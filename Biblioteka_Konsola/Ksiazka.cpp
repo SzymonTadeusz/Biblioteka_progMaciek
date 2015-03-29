@@ -1,4 +1,5 @@
 #include <vector>
+#include<string>
 #include <list>
 #include <iostream>
 
@@ -12,17 +13,18 @@ string Ksiazka::getPierwszyRozdzial() { return this->PierwszyRozdz; }
 
 void Ksiazka::WyswietlKsiazke()
 {
-//	if (!(this->Tytul.empty() && this->Autor.empty() && this->Wydawnictwo.empty()))
-	cout << "Tytul: ", this->getTytul(), cout << " Autor: ", this->getAutor(); cout << "\nWydawnictwo: "; this->Wydawnictwo; cout << " Rok: "; this->RokWydania, cout <<"\n";
-		cout << "\nCzy chcesz wyswietlic jej 1. rozdzial? 0 jesli nie: ";
-		char dec = 0;
+	cout << "Tytul: "; cout << this->getTytul(), cout << "\nAutor: "; cout << this->getAutor(); cout << endl << "       ";
+	cout << this->Wydawnictwo;	cout << ", "; cout << this->RokWydania; cout << "\n";
+		cout << "\nCzy chcesz wyswietlic jej 1. rozdzial? 1 - tak, 0 - nie: ";
+		short int dec = 0;
 		cin >> dec;
-		if (dec) this->getPierwszyRozdzial();
+		if (dec!=0) this->WyswietlRozdzial();
+		cout << endl << endl << endl;
 }
 
 void Ksiazka::WyswietlRozdzial()
 {
-	cout << "Tytul: "; cout << this->getTytul().c_str(), cout << " Autor: ", this->getAutor(), "\nI rozdz.: ", this->getPierwszyRozdzial();
+	cout << "Tytul: "; cout << this->getTytul(); cout << "\nAutor: "; cout << this->getAutor(); cout << "\nI rozdz.: "; cout << this->getPierwszyRozdzial();
 }
 
 Ksiazka::Ksiazka(char _ISBN[15], string _Tytul, string _Autor, int _RokWyd, string _Wydawnictwo){
