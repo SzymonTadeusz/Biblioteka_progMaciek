@@ -13,8 +13,11 @@ string Ksiazka::getPierwszyRozdzial() { return this->PierwszyRozdz; }
 
 void Ksiazka::WyswietlKsiazke()
 {
-	cout << "Tytul: "; cout << this->getTytul(), cout << "\nAutor: "; cout << this->getAutor(); cout << endl << "       ";
-	cout << this->Wydawnictwo;	cout << ", "; cout << this->RokWydania; cout << "\n";
+	cout << "Tytul: "; cout << this->getTytul();
+	cout << "\nAutor: "; cout << this->getAutor(); cout << endl << "       ";
+	cout << this->Wydawnictwo;	cout << ", ";
+	cout << this->RokWydania; cout << "\n";
+
 		cout << "\nCzy chcesz wyswietlic jej 1. rozdzial? 1 - tak, 0 - nie: ";
 		short int dec = 0;
 		cin >> dec;
@@ -24,7 +27,9 @@ void Ksiazka::WyswietlKsiazke()
 
 void Ksiazka::WyswietlRozdzial()
 {
-	cout << "Tytul: "; cout << this->getTytul(); cout << "\nAutor: "; cout << this->getAutor(); cout << "\nI rozdz.: "; cout << this->getPierwszyRozdzial();
+	cout << "Tytul: "; cout << this->getTytul();
+	cout << "\nAutor: "; cout << this->getAutor();
+	cout << "\nI rozdz.: "; cout << this->getPierwszyRozdzial();
 }
 
 Ksiazka::Ksiazka(char _ISBN[15], string _Tytul, string _Autor, int _RokWyd, string _Wydawnictwo){
