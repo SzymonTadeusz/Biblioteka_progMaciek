@@ -16,6 +16,13 @@ MenadzerBiblioteki::MenadzerBiblioteki()
 	}
 }
 
+void MenadzerBiblioteki::DodajKatalog(Katalog* DoDodania){
+	int i = 0;
+	while (i < 10 && this->ListaKatalogow[i] != NULL) i++; // omijaj dopóki na liœcie jest jakaœ zawartoœæ
+	if (i<10) this->ListaKatalogow[i] = DoDodania;
+	else cout << "\nNie ma miejsca na dodanie katalogu!\n";
+}
+
 MenadzerBiblioteki::~MenadzerBiblioteki()
 {
 }
@@ -31,6 +38,7 @@ void MenadzerBiblioteki::WyswietlKatalog(int indKat)
 
 void MenadzerBiblioteki::WyswietlKsiazke(int indKat, int indKsi)
 {
+	this->ListaKatalogow[indKat]->WyswietlKsiazke(indKsi);
 }
 
 void MenadzerBiblioteki::WyswietlRozdzial(int indKat, int indKsi)
@@ -52,17 +60,27 @@ void MenadzerBiblioteki::WyswietlMenuGlowne()
 		cin >> decyzja;
 		switch (decyzja)
 		{
-		case 1: 
-			cout << "Katalogi: " << endl;
+		case 1:
+		{
+			cout << "Katalogi: \n" << endl;
+			cout << "1. Nazwa: ";
+			cout << this->ListaKatalogow[0]->GetNazwa() << endl;
 			system("PAUSE");
 			break;
+		}
 		case 2:
+		{
 			cout << "Ksiazki: " << endl;
+			cout << "1. Nazwa: ";
+			this->WyswietlKsiazke(0, 0); cout << endl;
 			system("PAUSE");
 			break;
+		}
 		case 0:
-			exit(0);
-			break;
+		{
+		exit(0);
+		break;
+		}
 		default: break;
 		}
 	}

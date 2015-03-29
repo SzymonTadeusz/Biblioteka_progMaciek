@@ -1,11 +1,10 @@
 #pragma once
-#include <string>
 #include <vector>
 #include <list>
 #include <iostream>
 
 #include "Egzemplarz.h"
-
+using namespace std;
 class Ksiazka {
 private:
 	char ISBN[15];
@@ -19,6 +18,15 @@ private:
 	Egzemplarz ListaEgz[20];
 	std::string PierwszyRozdz;
 public:
+	string getTytul();
+	string getAutor();
+	string getPierwszyRozdzial();
+
 	void WyswietlKsiazke();
 	void WyswietlRozdzial();
+	Ksiazka();
+	Ksiazka(char[], string, string, int, string);
+	Ksiazka(char[], string, string, int, string, string, string, string[], Egzemplarz[], string);
+	Ksiazka(char[], string, string, int, string, string, string, string);
+	~Ksiazka();
 };

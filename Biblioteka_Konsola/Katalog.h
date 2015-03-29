@@ -1,5 +1,4 @@
 #pragma once
-#include <string>
 #include <vector>
 #include <list>
 #include <iostream>
@@ -8,7 +7,7 @@
 
 using namespace std;
 
- //Katalog dzieli ca³¹ literaturê na:
+ // Katalog dzieli ca³¹ literaturê na:
  //* - piêkn¹
  //* - naukow¹
  //* - beletrystykê
@@ -22,4 +21,6 @@ public:
 	~Katalog();
 	void WyswietlKatalog();
 	void WyswietlKsiazke(int indKsi);
+	void DodajKsiazke(Ksiazka* DoDodania);
+	string GetNazwa();
 };
