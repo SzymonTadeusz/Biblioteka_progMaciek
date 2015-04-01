@@ -4,7 +4,7 @@
 #include <iostream>
 #include <assert.h>
 
-#include "MenadzerBiblioteki.h"
+#include "../Pliki naglowkowe/MenadzerBiblioteki.h"
 
 using namespace std;
 

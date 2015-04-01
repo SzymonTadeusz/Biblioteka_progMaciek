@@ -64,20 +64,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Egzemplarz.cpp" />
-    <ClCompile Include="Katalog.cpp" />
-    <ClCompile Include="Ksiazka.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="MenadzerBiblioteki.cpp" />
+    <ClCompile Include="Pliki cpp\Egzemplarz.cpp" />
+    <ClCompile Include="Pliki cpp\Katalog.cpp" />
+    <ClCompile Include="Pliki cpp\Ksiazka.cpp" />
+    <ClCompile Include="Pliki cpp\main.cpp" />
+    <ClCompile Include="Pliki cpp\MenadzerBiblioteki.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\..\..\Desktop\Bibliotekav1\DiagramKlasv1.asta" />
+    <ClInclude Include="Pliki naglowkowe\Egzemplarz.h" />
+    <ClInclude Include="Pliki naglowkowe\Katalog.h" />
+    <ClInclude Include="Pliki naglowkowe\Ksiazka.h" />
+    <ClInclude Include="Pliki naglowkowe\MenadzerBiblioteki.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Egzemplarz.h" />
-    <ClInclude Include="Katalog.h" />
-    <ClInclude Include="Ksiazka.h" />
-    <ClInclude Include="MenadzerBiblioteki.h" />
+    <None Include="Projekt\DiagramKlasv1.asta" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

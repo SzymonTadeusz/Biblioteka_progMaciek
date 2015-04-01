@@ -2,7 +2,7 @@
 #include <list>
 #include <iostream>
 
-#include "Egzemplarz.h"
+#include "../Pliki naglowkowe/Egzemplarz.h"
 
 Egzemplarz::Egzemplarz()
 {

@@ -4,7 +4,7 @@
 #include <iostream>
 #include <assert.h>
 
-#include "Katalog.h"
+#include "../Pliki naglowkowe/Katalog.h"
 
 Katalog::Katalog()
 {

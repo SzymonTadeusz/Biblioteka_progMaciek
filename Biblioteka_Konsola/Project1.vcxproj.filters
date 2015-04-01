@@ -15,37 +15,39 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Egzemplarz.cpp">
+    <ClCompile Include="Pliki cpp\Egzemplarz.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Katalog.cpp">
+    <ClCompile Include="Pliki cpp\Katalog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Ksiazka.cpp">
+    <ClCompile Include="Pliki cpp\Ksiazka.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MenadzerBiblioteki.cpp">
+    <ClCompile Include="Pliki cpp\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="Pliki cpp\MenadzerBiblioteki.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\..\..\Desktop\Bibliotekav1\DiagramKlasv1.asta" />
+    <ClInclude Include="Pliki naglowkowe\Egzemplarz.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pliki naglowkowe\Katalog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pliki naglowkowe\Ksiazka.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pliki naglowkowe\MenadzerBiblioteki.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Egzemplarz.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Katalog.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Ksiazka.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MenadzerBiblioteki.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <None Include="Projekt\DiagramKlasv1.asta">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

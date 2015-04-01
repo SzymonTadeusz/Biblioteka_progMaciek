@@ -1,8 +1,8 @@
 #include <iostream>
-#include "Egzemplarz.h"
-#include "Katalog.h"
-#include "Ksiazka.h"
-#include "MenadzerBiblioteki.h"
+#include "../Pliki naglowkowe/Egzemplarz.h"
+#include "../Pliki naglowkowe/Katalog.h"
+#include "../Pliki naglowkowe/Ksiazka.h"
+#include "../Pliki naglowkowe/MenadzerBiblioteki.h"
 
 
 using namespace std;
@@ -18,7 +18,7 @@ int main()
 	MenadzerBiblioteki* Menadzer = new MenadzerBiblioteki();
 	Menadzer->DodajKatalog(SciFi);
 
-	Menadzer->WyswietlMenuGlowne();
+	Menadzer->WyswietlMenuGlowne();	
 
 	delete Menadzer;
 	return 0;

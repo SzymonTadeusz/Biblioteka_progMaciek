@@ -3,7 +3,7 @@
 #include <list>
 #include <iostream>
 
-#include "Ksiazka.h"
+#include "../Pliki naglowkowe/Ksiazka.h"
 
 string Ksiazka::getTytul() { return this->Tytul; }
 
