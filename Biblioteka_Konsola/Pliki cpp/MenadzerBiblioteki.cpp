@@ -23,6 +23,23 @@ void MenadzerBiblioteki::DodajKatalog(Katalog* DoDodania){
 	else cout << "\nNie ma miejsca na dodanie katalogu!\n";
 }
 
+Ksiazka* MenadzerBiblioteki::WyszukajKsiazke(string nazwa)
+{
+	Ksiazka* WynikPoszukiwan = NULL;
+	int i = 0;
+	while (WynikPoszukiwan == NULL && i < 10)
+	{
+		if (this->ListaKatalogow[i] != NULL)
+		{
+			WynikPoszukiwan = this->ListaKatalogow[i]->WyszukajKsiazke(nazwa);
+		}
+
+		i++;
+	}
+
+	return WynikPoszukiwan;
+}
+
 void MenadzerBiblioteki::WyswietlKatalog(string nazwa)
 {
 	Katalog* znaleziony = NULL;
@@ -94,6 +111,7 @@ void MenadzerBiblioteki::WyswietlMenuGlowne()
 		cout << "1. Przegladanie katalogow" << endl;
 		cout << "2. Przegladanie ksiazek w danym katalogu" << endl;
 		cout << "3. Wyszukiwanie katalogow po nazwie katalogu" << endl;
+		cout << "4. Wyszukiwanie ksiazek po nazwie ksiazki" << endl;
 		cout << "0. Wyjscie z programu" << endl << endl;
 		cout << "Twoja decyzja: ";
 		cin >> decyzja;
@@ -133,6 +151,19 @@ void MenadzerBiblioteki::WyswietlMenuGlowne()
 		this->WyswietlKatalog(podanaNazwa);
 		system("PAUSE");
 			break;
+		}
+		case 4:
+		{			cout << "****************************************\n";
+		cout << "Podaj nazwe ksiazki: ";
+		string podanaNazwa = "";
+		cin.sync();
+		getline(std::cin, podanaNazwa);
+		Ksiazka* wyswietlanaKsiazka;
+		wyswietlanaKsiazka = this->WyszukajKsiazke(podanaNazwa);
+		if (wyswietlanaKsiazka) wyswietlanaKsiazka->WyswietlKsiazke();
+		else cout << "Brak takiej ksiazki w bazie!";
+		system("PAUSE");
+		break;
 		}
 		case 0:
 		{

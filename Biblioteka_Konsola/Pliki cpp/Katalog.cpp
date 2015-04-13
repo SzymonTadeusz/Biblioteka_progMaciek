@@ -15,6 +15,37 @@ Katalog::Katalog()
 	this->NazwaKatalogu = "Katalog";
 }
 
+Ksiazka* Katalog::WyszukajKsiazke(string nazwa)
+{
+	string NazwaBiezacejKsiazki;
+	Ksiazka* WynikPoszukiwan = NULL;
+	int i = 0;
+
+	for (int j = 0; j < nazwa.length(); j++)
+	{
+		nazwa[j] = tolower(nazwa[j]);
+	}
+
+	while (WynikPoszukiwan == NULL && i < 100)
+	{
+		if (ListaKsiazek[i] != NULL)
+		{
+			NazwaBiezacejKsiazki = ListaKsiazek[i]->getTytul();
+
+			for (int j = 0; j < NazwaBiezacejKsiazki.length(); j++)
+			{
+				NazwaBiezacejKsiazki[j] = tolower(NazwaBiezacejKsiazki[j]);
+			}
+
+			if (NazwaBiezacejKsiazki == nazwa) WynikPoszukiwan = ListaKsiazek[i];
+		}
+
+		i++;
+	}
+
+	return WynikPoszukiwan;
+}
+
 void Katalog::DodajKsiazke(Ksiazka* DoDodania){
 	int i = 0;
 	while (i < 100 && this->ListaKsiazek[i] != NULL) i++; // omijaj dopóki na liœcie jest jakaœ zawartoœæ
