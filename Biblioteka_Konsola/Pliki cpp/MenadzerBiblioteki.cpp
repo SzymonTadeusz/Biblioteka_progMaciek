@@ -23,6 +23,44 @@ void MenadzerBiblioteki::DodajKatalog(Katalog* DoDodania){
 	else cout << "\nNie ma miejsca na dodanie katalogu!\n";
 }
 
+void MenadzerBiblioteki::WyswietlKatalog(string nazwa)
+{
+	Katalog* znaleziony = NULL;
+	string NazwaKataloguBiezacego;
+
+	for (int j = 0; j < nazwa.length(); j++)
+	{
+		nazwa[j] = tolower(nazwa[j]);
+	}
+	int j = 0;
+
+	while (j < 10 && ListaKatalogow[j] != NULL && znaleziony == NULL)
+	{
+		if (ListaKatalogow[j] != NULL)
+		{
+			NazwaKataloguBiezacego = ListaKatalogow[j]->GetNazwa();
+			//zamiana znakow pobranej nazwy na male litery
+			for (int i = 0; i < NazwaKataloguBiezacego.length(); i++)
+			{
+				NazwaKataloguBiezacego[i] = tolower(NazwaKataloguBiezacego[i]);
+			}
+			if (NazwaKataloguBiezacego == nazwa) znaleziony = ListaKatalogow[j];
+		}
+		j++;
+	}
+
+	if (znaleziony != NULL)
+	{
+		cout << "Znaleziono katalog o podanej nazwie. Jego zawartosc to:\n\n";
+		znaleziony->WyswietlKatalog();
+	}
+
+	else
+	{
+		cout << "Nie znaleziono katalogu o podanej nazwie" << endl;
+	}
+}
+
 MenadzerBiblioteki::~MenadzerBiblioteki()
 {
 }
@@ -55,6 +93,7 @@ void MenadzerBiblioteki::WyswietlMenuGlowne()
 		cout << "Co chcesz zrobic?" << endl;
 		cout << "1. Przegladanie katalogow" << endl;
 		cout << "2. Przegladanie ksiazek w danym katalogu" << endl;
+		cout << "3. Wyszukiwanie katalogow po nazwie katalogu" << endl;
 		cout << "0. Wyjscie z programu" << endl << endl;
 		cout << "Twoja decyzja: ";
 		cin >> decyzja;
@@ -83,6 +122,16 @@ void MenadzerBiblioteki::WyswietlMenuGlowne()
 					cout << "----------------------------------------\n";
 				}
 			system("PAUSE");
+			break;
+		}
+
+		case 3:
+		{			cout << "****************************************\n";
+		cout << "Podaj nazwe katalogu: ";
+		string podanaNazwa = "";
+		cin >> podanaNazwa;
+		this->WyswietlKatalog(podanaNazwa);
+		system("PAUSE");
 			break;
 		}
 		case 0:

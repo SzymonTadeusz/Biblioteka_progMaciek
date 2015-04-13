@@ -12,7 +12,7 @@ Katalog::Katalog()
 	{
 		this->ListaKsiazek[i] = NULL;
 	}
-	this->NazwaKatalogu = "Katalog ";
+	this->NazwaKatalogu = "Katalog";
 }
 
 void Katalog::DodajKsiazke(Ksiazka* DoDodania){

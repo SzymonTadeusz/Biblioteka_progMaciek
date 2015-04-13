@@ -25,6 +25,7 @@ public:
 	void WyswietlKatalog(int indKat);
 
 	void WyswietlKsiazke(int indKat, int indKsi);
+	void WyswietlKatalog(string nazwa);
 	void WyswietlRozdzial(int indKat, int indKsi);
 	void WyswietlMenuGlowne();
 	void DodajKatalog(Katalog* doDodania);
