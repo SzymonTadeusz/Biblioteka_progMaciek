@@ -23,7 +23,7 @@ void MenadzerBiblioteki::DodajKatalog(Katalog* DoDodania){
 	else cout << "\nNie ma miejsca na dodanie katalogu!\n";
 }
 
-Ksiazka* MenadzerBiblioteki::WyszukajKsiazke(string nazwa)
+Ksiazka* MenadzerBiblioteki::WyszukajKsiazke(string nazwKsi)
 {
 	Ksiazka* WynikPoszukiwan = NULL;
 	int i = 0;
@@ -31,7 +31,7 @@ Ksiazka* MenadzerBiblioteki::WyszukajKsiazke(string nazwa)
 	{
 		if (this->ListaKatalogow[i] != NULL)
 		{
-			WynikPoszukiwan = this->ListaKatalogow[i]->WyszukajKsiazke(nazwa);
+			WynikPoszukiwan = this->ListaKatalogow[i]->WyszukajKsiazke(nazwKsi);
 		}
 
 		i++;
@@ -40,14 +40,14 @@ Ksiazka* MenadzerBiblioteki::WyszukajKsiazke(string nazwa)
 	return WynikPoszukiwan;
 }
 
-void MenadzerBiblioteki::WyswietlKatalog(string nazwa)
+void MenadzerBiblioteki::WyswietlKatalog(string nazwKat)
 {
 	Katalog* znaleziony = NULL;
 	string NazwaKataloguBiezacego;
 
-	for (int j = 0; j < nazwa.length(); j++)
+	for (int j = 0; j < nazwKat.length(); j++)
 	{
-		nazwa[j] = tolower(nazwa[j]);
+		nazwKat[j] = tolower(nazwKat[j]);
 	}
 	int j = 0;
 
@@ -61,7 +61,7 @@ void MenadzerBiblioteki::WyswietlKatalog(string nazwa)
 			{
 				NazwaKataloguBiezacego[i] = tolower(NazwaKataloguBiezacego[i]);
 			}
-			if (NazwaKataloguBiezacego == nazwa) znaleziony = ListaKatalogow[j];
+			if (NazwaKataloguBiezacego == nazwKat) znaleziony = ListaKatalogow[j];
 		}
 		j++;
 	}
