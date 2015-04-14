@@ -15,15 +15,15 @@ Katalog::Katalog()
 	this->NazwaKatalogu = "Katalog";
 }
 
-Ksiazka* Katalog::WyszukajKsiazke(string nazwa)
+Ksiazka* Katalog::WyszukajKsiazke(string nazwKsi)
 {
 	string NazwaBiezacejKsiazki;
 	Ksiazka* WynikPoszukiwan = NULL;
 	int i = 0;
 
-	for (int j = 0; j < nazwa.length(); j++)
+	for (int j = 0; j < nazwKsi.length(); j++)
 	{
-		nazwa[j] = tolower(nazwa[j]);
+		nazwKsi[j] = tolower(nazwKsi[j]);
 	}
 
 	while (WynikPoszukiwan == NULL && i < 100)
@@ -37,7 +37,7 @@ Ksiazka* Katalog::WyszukajKsiazke(string nazwa)
 				NazwaBiezacejKsiazki[j] = tolower(NazwaBiezacejKsiazki[j]);
 			}
 
-			if (NazwaBiezacejKsiazki == nazwa) WynikPoszukiwan = ListaKsiazek[i];
+			if (NazwaBiezacejKsiazki == nazwKsi) WynikPoszukiwan = ListaKsiazek[i];
 		}
 
 		i++;
