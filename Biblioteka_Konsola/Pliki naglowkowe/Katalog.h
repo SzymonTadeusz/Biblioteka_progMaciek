@@ -20,7 +20,7 @@ public:
 	Katalog();
 	~Katalog();
 	void WyswietlKatalog();
-	Ksiazka* WyszukajKsiazke(string nazwa);
+	Ksiazka* WyszukajKsiazke(string nazwKsi);
 	void WyswietlKsiazke(int indKsi);
 	void DodajKsiazke(Ksiazka* DoDodania);
 	string GetNazwa();
