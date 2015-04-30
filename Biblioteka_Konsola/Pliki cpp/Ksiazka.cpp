@@ -48,6 +48,7 @@ Ksiazka::Ksiazka(char _ISBN[15], string _Tytul, string _Autor, int _RokWyd, stri
 		for (int i = 0; i < 10; i++)
 	{
 		this->ListaEgz[i] = Egzemplarz();
+		this->ListaEgz2[i] = Egzemplarz();
 	}
 }
 
@@ -71,6 +72,7 @@ Ksiazka::Ksiazka(char _ISBN[15], string _Tytul, string _Autor, int _RokWyd, stri
 	for (int i = 0; i < 10; i++)
 	{
 		this->ListaEgz[i] = Egzemplarz();
+		this->ListaEgz2[i] = Egzemplarz();
 	}
 }
 
@@ -94,6 +96,7 @@ Ksiazka::Ksiazka(char _ISBN[15], string _Tytul, string _Autor, int _RokWyd, stri
 	for (int i = 0; i < 10; i++)
 	{
 		this->ListaEgz[i] = Egzemplarz();
+		this->ListaEgz2[i] = Egzemplarz();
 	}
 }
 
