@@ -16,7 +16,6 @@ private:
 	std::string Typ;
 	std::string Gatunek[5];
 	Egzemplarz ListaEgz[20];
-	std::vector<Egzemplarz> ListaEgz2;
 	std::string PierwszyRozdz;
 public:
 	string getTytul();

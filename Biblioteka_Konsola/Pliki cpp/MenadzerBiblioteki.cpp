@@ -19,24 +19,19 @@ MenadzerBiblioteki::MenadzerBiblioteki()
 void MenadzerBiblioteki::DodajKatalog(Katalog* DoDodania){
 	int i = 0;
 	while (i < 10 && this->ListaKatalogow[i] != NULL) i++; // omijaj dopóki na liœcie jest jakaœ zawartoœæ
-	if (i < 10) {
-		this->ListaKatalogow[i] = DoDodania;
-		this->ListaKatalogow2.push_back(DoDodania);
-	}
+	if (i<10) this->ListaKatalogow[i] = DoDodania;
 	else cout << "\nNie ma miejsca na dodanie katalogu!\n";
 }
 
 Ksiazka* MenadzerBiblioteki::WyszukajKsiazke(string nazwKsi)
 {
 	Ksiazka* WynikPoszukiwan = NULL;
-	//Ksiazka* WynikPoszukiwan2 = NULL;
 	int i = 0;
 	while (WynikPoszukiwan == NULL && i < 10)
 	{
 		if (this->ListaKatalogow[i] != NULL)
 		{
 			WynikPoszukiwan = this->ListaKatalogow[i]->WyszukajKsiazke(nazwKsi);
-			//WynikPoszukiwan2 = this->ListaKatalogow2[i]->WyswietlKsiazke(nazwKsi);
 		}
 
 		i++;
@@ -99,7 +94,6 @@ void MenadzerBiblioteki::WyswietlKatalog(int indKat)
 void MenadzerBiblioteki::WyswietlKsiazke(int indKat, int indKsi)
 {
 	this->ListaKatalogow[indKat]->WyswietlKsiazke(indKsi);
-	//this->ListaKatalogow2[indKat]->WyswietlKsiazke(indKsi);
 }
 
 void MenadzerBiblioteki::WyswietlRozdzial(int indKat, int indKsi)
@@ -130,7 +124,6 @@ void MenadzerBiblioteki::WyswietlMenuGlowne()
 			{
 				cout << i+1 << ". ";
 				cout << this->ListaKatalogow[0]->GetNazwa() << endl;
-				//cout << this->ListaKatalogow2[0]->GetNazwa() << endl;
 			}
 			system("PAUSE");
 			break;

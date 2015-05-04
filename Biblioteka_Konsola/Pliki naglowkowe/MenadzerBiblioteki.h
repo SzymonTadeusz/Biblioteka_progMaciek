@@ -9,7 +9,6 @@ class MenadzerBiblioteki
 {
 private:
 	Katalog* ListaKatalogow[10];
-	std::vector<Katalog*> ListaKatalogow2;
 
 public:
 	// Konstruktor klasy MenadzerBiblioteki

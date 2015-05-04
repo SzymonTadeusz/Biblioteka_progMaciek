@@ -18,9 +18,7 @@ Katalog::Katalog()
 Ksiazka* Katalog::WyszukajKsiazke(string nazwKsi)
 {
 	string NazwaBiezacejKsiazki;
-	//string NazwaBiezacejKsiazki2;
 	Ksiazka* WynikPoszukiwan = NULL;
-	//Ksiazka* WynikPoszukiwan2 = NULL;
 	int i = 0;
 
 	for (int j = 0; j < nazwKsi.length(); j++)
@@ -33,16 +31,13 @@ Ksiazka* Katalog::WyszukajKsiazke(string nazwKsi)
 		if (ListaKsiazek[i] != NULL)
 		{
 			NazwaBiezacejKsiazki = ListaKsiazek[i]->getTytul();
-			//NazwaBiezacejKsiazki2 = ListaKsiazek2[i]->getTytul();
 
 			for (int j = 0; j < NazwaBiezacejKsiazki.length(); j++)
 			{
 				NazwaBiezacejKsiazki[j] = tolower(NazwaBiezacejKsiazki[j]);
-				//NazwaBiezacejKsiazki2[j] = tolower(NazwaBiezacejKsiazki2[j]);
 			}
 
 			if (NazwaBiezacejKsiazki == nazwKsi) WynikPoszukiwan = ListaKsiazek[i];
-			//if (NazwaBiezacejKsiazki2 == nazwKsi) WynikPoszukiwan2 = ListaKsiazek2[i];
 		}
 
 		i++;
@@ -54,10 +49,7 @@ Ksiazka* Katalog::WyszukajKsiazke(string nazwKsi)
 void Katalog::DodajKsiazke(Ksiazka* DoDodania){
 	int i = 0;
 	while (i < 100 && this->ListaKsiazek[i] != NULL) i++; // omijaj dopóki na liœcie jest jakaœ zawartoœæ
-	if (i < 100) {
-		this->ListaKsiazek[i] = DoDodania;
-		//this->ListaKsiazek2.push_back(DoDodania);
-	}
+	if (i<100) this->ListaKsiazek[i] = DoDodania;
 	else cout << "\nNie ma miejsca na dodanie ksiazki!\n";
 }
 
@@ -79,14 +71,9 @@ void Katalog::WyswietlKatalog()
 	{
 		if (this->ListaKsiazek[i] != NULL) cout << "Tytul: ", this->ListaKsiazek[i]->WyswietlKsiazke();
 	}
-	/*
-	for (std::vector<Katalog*>::iterator it = this->ListaKsiazek2.begin(); it != ListaKsiazek2.end(); ++it)
-		cout << "Tytul: ", this->ListaKsiazek2[it]->WyswietlKsiazke();
-	*/
 }
 
 void Katalog::WyswietlKsiazke(int indKsi)
 {
 		if (indKsi <100 && this->ListaKsiazek[indKsi] != NULL) this->ListaKsiazek[indKsi]->WyswietlKsiazke();
-		//if (indKsi <100 && this->ListaKsiazek2[indKsi] != NULL) this->ListaKsiazek2[indKsi]->WyswietlKsiazke();
 }

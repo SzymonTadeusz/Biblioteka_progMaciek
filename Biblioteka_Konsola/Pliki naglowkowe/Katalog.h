@@ -15,7 +15,6 @@ class Katalog {
 private:
 	string NazwaKatalogu;
 	Ksiazka* ListaKsiazek[100];
-	std::vector<Katalog*> ListaKsiazek2;
 
 public:
 	Katalog();
