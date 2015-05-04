@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2015-04-30 00:51:10                          */
+/* Created on:     2015-05-04 21:44:50                          */
 /*==============================================================*/
 
 
@@ -23,7 +23,7 @@ drop table if exists WypozyczenieEgzemplarza;
 /*==============================================================*/
 create table Autor
 (
-   IdAutora             int not null AUTO_INCREMENT,
+   IdAutora             int not null,
    Imie                 varchar(20) not null,
    Nazwisko             varchar(30) not null,
    DataUr               date,
@@ -45,7 +45,7 @@ create table AutorzyTytulu
 /*==============================================================*/
 create table EgzemplarzKsiazki
 (
-   IdEgzemplarza        int not null AUTO_INCREMENT,
+   IdEgzemplarza        int not null,
    IdKsiazki            int not null,
    primary key (IdEgzemplarza)
 );
@@ -55,7 +55,7 @@ create table EgzemplarzKsiazki
 /*==============================================================*/
 create table Katalog
 (
-   IdKatalogu           int not null AUTO_INCREMENT,
+   IdKatalogu           int not null,
    NazwaKatalogu        varchar(50) not null,
    primary key (IdKatalogu)
 );
@@ -65,7 +65,7 @@ create table Katalog
 /*==============================================================*/
 create table Ksiazka
 (
-   IdKsiazki            int not null AUTO_INCREMENT,
+   IdKsiazki            int not null,
    Tytul                varchar(50) not null,
    RokWydania           numeric(4,0),
    Gatunek              varchar(70),
@@ -101,7 +101,7 @@ create table Osoba
 /*==============================================================*/
 create table WypozyczenieEgzemplarza
 (
-   IdWypozyczenia       int not null AUTO_INCREMENT,
+   IdWypozyczenia       int not null,
    PESEL                char(11) not null,
    IdEgzemplarza        int not null,
    DataWypozyczenia     datetime not null,
