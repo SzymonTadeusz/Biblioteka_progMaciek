@@ -15,37 +15,42 @@ Katalog::Katalog()
 	this->NazwaKatalogu = "Katalog";
 }
 
+Katalog::Katalog(string Nazwa)
+{
+	for (int i = 0; i < 100; i++)
+	{
+		this->ListaKsiazek[i] = NULL;
+	}
+	this->NazwaKatalogu = Nazwa;
+}
+
 Ksiazka* Katalog::WyszukajKsiazke(string nazwKsi)
 {
 	string NazwaBiezacejKsiazki;
-	// Prototype Vector
-	//string NazwaBiezacejKsiazki2;
 	Ksiazka* WynikPoszukiwan = NULL;
-	// Prototype Vector
-	//Ksiazka* WynikPoszukiwan2 = NULL;
 	int i = 0;
 
-	for (int j = 0; j < nazwKsi.length(); j++)
+	for (unsigned int j = 0; j < nazwKsi.length(); j++)
 	{
 		nazwKsi[j] = tolower(nazwKsi[j]);
 	}
 
 	while (WynikPoszukiwan == NULL && i < 100)
 	{
-		if (ListaKsiazek[i] != NULL)
+		if (ListaKsiazek2[i] != NULL)
 		{
-			NazwaBiezacejKsiazki = ListaKsiazek[i]->getTytul();
+			NazwaBiezacejKsiazki = ListaKsiazek2[i]->getTytul();
 			// Prototype Vector
 			//NazwaBiezacejKsiazki2 = ListaKsiazek2[i]->getTytul();
 
-			for (int j = 0; j < NazwaBiezacejKsiazki.length(); j++)
+			for (unsigned int j = 0; j < NazwaBiezacejKsiazki.length(); j++)
 			{
 				NazwaBiezacejKsiazki[j] = tolower(NazwaBiezacejKsiazki[j]);
 				// Prototype Vector
 				//NazwaBiezacejKsiazki2[j] = tolower(NazwaBiezacejKsiazki2[j]);
 			}
 
-			if (NazwaBiezacejKsiazki == nazwKsi) WynikPoszukiwan = ListaKsiazek[i];
+			if (NazwaBiezacejKsiazki == nazwKsi) WynikPoszukiwan = ListaKsiazek2[i];
 			// Prototype Vector
 			//if (NazwaBiezacejKsiazki2 == nazwKsi) WynikPoszukiwan2 = ListaKsiazek2[i];
 		}
@@ -57,14 +62,7 @@ Ksiazka* Katalog::WyszukajKsiazke(string nazwKsi)
 }
 
 void Katalog::DodajKsiazke(Ksiazka* DoDodania){
-	int i = 0;
-	while (i < 100 && this->ListaKsiazek[i] != NULL) i++; // omijaj dopóki na liœcie jest jakaœ zawartoœæ
-	if (i < 100) {
-		this->ListaKsiazek[i] = DoDodania;
-		// Prototype Vector
-		//this->ListaKsiazek2.push_back(DoDodania);
-	}
-	else cout << "\nNie ma miejsca na dodanie ksiazki!\n";
+		this->ListaKsiazek2.push_back(DoDodania);
 }
 
 string Katalog::GetNazwa(){
@@ -80,21 +78,13 @@ Katalog::~Katalog()
 
 void Katalog::WyswietlKatalog()
 {
-	//?
-	for (int i = 0; i < 100; i++)
+	for each (Ksiazka* ks in this->ListaKsiazek2)
 	{
-		if (this->ListaKsiazek[i] != NULL) cout << "Tytul: ", this->ListaKsiazek[i]->WyswietlKsiazke();
+		cout << "Tytul: ", ks->WyswietlKsiazke();
 	}
-	/*
-	// Prototype Vector
-	for (std::vector<Katalog*>::iterator it = this->ListaKsiazek2.begin(); it != ListaKsiazek2.end(); ++it)
-		cout << "Tytul: ", this->ListaKsiazek2[it]->WyswietlKsiazke();
-	*/
 }
 
 void Katalog::WyswietlKsiazke(int indKsi)
 {
-		if (indKsi <100 && this->ListaKsiazek[indKsi] != NULL) this->ListaKsiazek[indKsi]->WyswietlKsiazke();
-		// Prototype Vector
-		//if (indKsi <100 && this->ListaKsiazek2[indKsi] != NULL) this->ListaKsiazek2[indKsi]->WyswietlKsiazke();
+		this->ListaKsiazek2[indKsi]->WyswietlKsiazke();
 }

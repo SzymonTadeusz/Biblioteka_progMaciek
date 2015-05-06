@@ -26,7 +26,7 @@ public:
 	void WyswietlKatalog(int indKat);
 
 	void WyswietlKsiazke(int indKat, int indKsi);
-	Ksiazka* WyszukajKsiazke(string nazwKsi);
+	vector<Ksiazka*> WyszukajKsiazke(string nazwKsi);
 	void WyswietlKatalog(string nazwKat);
 	void WyswietlRozdzial(int indKat, int indKsi);
 	void WyswietlMenuGlowne();

@@ -17,72 +17,37 @@ MenadzerBiblioteki::MenadzerBiblioteki()
 }
 
 void MenadzerBiblioteki::DodajKatalog(Katalog* DoDodania){
-	int i = 0;
-	while (i < 10 && this->ListaKatalogow[i] != NULL) i++; // omijaj dopóki na liœcie jest jakaœ zawartoœæ
-	if (i < 10) {
-		this->ListaKatalogow[i] = DoDodania;
-		// Prototype Vector
-		//this->ListaKatalogow2.push_back(DoDodania);
-	}
-	else cout << "\nNie ma miejsca na dodanie katalogu!\n";
+	this->ListaKatalogow2.push_back(DoDodania);
 }
 
-Ksiazka* MenadzerBiblioteki::WyszukajKsiazke(string nazwKsi)
+vector<Ksiazka*> MenadzerBiblioteki::WyszukajKsiazke(string nazwKsi)
 {
-	Ksiazka* WynikPoszukiwan = NULL;
-	//Ksiazka* WynikPoszukiwan2 = NULL;
-	int i = 0;
-	while (WynikPoszukiwan == NULL && i < 10)
-	{
-		if (this->ListaKatalogow[i] != NULL)
-		{
-			WynikPoszukiwan = this->ListaKatalogow[i]->WyszukajKsiazke(nazwKsi);
-			// Prototype Vector
-			//WynikPoszukiwan2 = this->ListaKatalogow2[i]->WyswietlKsiazke(nazwKsi);
-		}
+	vector<Ksiazka*> WynikPoszukiwan;
 
-		i++;
+	for each (Katalog* kat in this->ListaKatalogow2)
+	{
+		for each (Ksiazka* ks in kat->ListaKsiazek2)
+			if (ks->getTytul().find(nazwKsi) != string::npos) WynikPoszukiwan.push_back(ks);
 	}
 
 	return WynikPoszukiwan;
 }
 
 void MenadzerBiblioteki::WyswietlKatalog(string nazwKat)
-{
-	Katalog* znaleziony = NULL;
-	string NazwaKataloguBiezacego;
-
-	for (int j = 0; j < nazwKat.length(); j++)
-	{
-		nazwKat[j] = tolower(nazwKat[j]);
-	}
-	int j = 0;
-
-	while (j < 10 && ListaKatalogow[j] != NULL && znaleziony == NULL)
-	{
-		if (ListaKatalogow[j] != NULL)
-		{
-			NazwaKataloguBiezacego = ListaKatalogow[j]->GetNazwa();
-			//zamiana znakow pobranej nazwy na male litery
-			for (int i = 0; i < NazwaKataloguBiezacego.length(); i++)
-			{
-				NazwaKataloguBiezacego[i] = tolower(NazwaKataloguBiezacego[i]);
-			}
-			if (NazwaKataloguBiezacego == nazwKat) znaleziony = ListaKatalogow[j];
+{	
+	vector<Katalog*> zbiorKatalogow;
+	for each (Katalog* kat in this->ListaKatalogow2)
+		if (kat->GetNazwa().find(nazwKat) != string::npos) zbiorKatalogow.push_back(kat);
+	
+	if (zbiorKatalogow.empty()) cout << "Nie znaleziono katalogu o podanej nazwie" << endl;
+	else{
+		int decyzja;
+		cout << "Znaleziono katalog(i) o podanej nazwie\nczy chcesz wyswietlic zawartosc: 1 - tak, 0 - nie: ";
+		cin >> decyzja;
+		if (decyzja)
+		for each (Katalog* kat in zbiorKatalogow)
+			kat->WyswietlKatalog();
 		}
-		j++;
-	}
-
-	if (znaleziony != NULL)
-	{
-		cout << "Znaleziono katalog o podanej nazwie. Jego zawartosc to:\n\n";
-		znaleziony->WyswietlKatalog();
-	}
-
-	else
-	{
-		cout << "Nie znaleziono katalogu o podanej nazwie" << endl;
-	}
 }
 
 MenadzerBiblioteki::~MenadzerBiblioteki()
@@ -100,9 +65,7 @@ void MenadzerBiblioteki::WyswietlKatalog(int indKat)
 
 void MenadzerBiblioteki::WyswietlKsiazke(int indKat, int indKsi)
 {
-	this->ListaKatalogow[indKat]->WyswietlKsiazke(indKsi);
-	// Prototype Vector
-	//this->ListaKatalogow2[indKat]->WyswietlKsiazke(indKsi);
+	this->ListaKatalogow2[indKat]->WyswietlKsiazke(indKsi);
 }
 
 void MenadzerBiblioteki::WyswietlRozdzial(int indKat, int indKsi)
@@ -114,6 +77,7 @@ void MenadzerBiblioteki::WyswietlMenuGlowne()
 	int decyzja = 1;
 	while (decyzja != 0)
 	{
+		cin.sync(); //wyczysc bufor, jesli sa w nim jakies smieci
 		system("CLS");
 		cout << "****Witamy w programie bibliotecznym****" << endl << endl;
 		cout << "Co chcesz zrobic?" << endl;
@@ -123,19 +87,20 @@ void MenadzerBiblioteki::WyswietlMenuGlowne()
 		cout << "4. Wyszukiwanie ksiazek po nazwie ksiazki" << endl;
 		cout << "0. Wyjscie z programu" << endl << endl;
 		cout << "Twoja decyzja: ";
-		cin >> decyzja;
+		while (!(cin >> decyzja)) //dopóki podawane s¹ b³êdne dane
+		{
+			cout << "Podaj poprawna wartosc - cyfre od 0 do 4. Twoja decyzja: ";
+			cin.clear(); //kasowanie flagi b³êdu
+			cin.sync(); //kasowanie zbêdnych znaków
+		}
+		cin.sync(); //wyczysc bufor, jesli sa w nim jakies smieci
 		switch (decyzja)
 		{
 		case 1:
 		{
 			cout << "Katalogi: \n" << endl;
-			for (int i = 0; i < 1; i++)			 // i - nr katalogu
-			{
-				cout << i+1 << ". ";
-				cout << this->ListaKatalogow[0]->GetNazwa() << endl;
-				// Prototype Vector
-				//cout << this->ListaKatalogow2[0]->GetNazwa() << endl;
-			}
+			for each(Katalog* kat in this->ListaKatalogow2)
+				cout <<  kat->GetNazwa() << endl;
 			system("PAUSE");
 			break;
 		}
@@ -143,19 +108,18 @@ void MenadzerBiblioteki::WyswietlMenuGlowne()
 		{
 			cout << "****************************************\n";
 			cout << "Ksiazki: " << endl;
-			for (int i = 0; i < 1; i++)			// na razie wygl¹da œmiesznie, ale przyda siê na wiêcej katalogów i ksi¹¿ek
-				for (int j = 0; j < 2; j++)		// i - nr katalogu, j - nr ksi¹¿ki w katalogu
-				{
-					cout << j+1 << ". ";
-					this->WyswietlKsiazke(i, j); cout << endl;
-					cout << "----------------------------------------\n";
-				}
+
+			for each (Katalog* kat in this->ListaKatalogow2)
+			{
+				kat->WyswietlKatalog();
+			}
 			system("PAUSE");
 			break;
 		}
 
 		case 3:
-		{			cout << "****************************************\n";
+		{
+		cout << "****************************************\n";
 		cout << "Podaj nazwe katalogu: ";
 		string podanaNazwa = "";
 		cin >> podanaNazwa;
@@ -164,15 +128,20 @@ void MenadzerBiblioteki::WyswietlMenuGlowne()
 			break;
 		}
 		case 4:
-		{			cout << "****************************************\n";
+		{
+		cout << "****************************************\n";
 		cout << "Podaj nazwe ksiazki: ";
 		string podanaNazwa = "";
 		cin.sync();
 		getline(std::cin, podanaNazwa);
-		Ksiazka* wyswietlanaKsiazka;
-		wyswietlanaKsiazka = this->WyszukajKsiazke(podanaNazwa);
-		if (wyswietlanaKsiazka) wyswietlanaKsiazka->WyswietlKsiazke();
-		else cout << "Brak takiej ksiazki w bazie!";
+		vector<Ksiazka*> zbior;
+		zbior = this->WyszukajKsiazke(podanaNazwa);
+		if (zbior.empty()) cout << "Brak takiej ksiazki w bazie!";
+		else 
+			for each (Ksiazka* ks in zbior)
+			{
+			  ks->WyswietlKsiazke();
+			}
 		system("PAUSE");
 		break;
 		}

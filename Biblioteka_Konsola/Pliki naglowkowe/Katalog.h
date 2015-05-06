@@ -12,13 +12,15 @@ using namespace std;
  //* - naukow¹
  //* - beletrystykê
 class Katalog {
+	friend class MenadzerBiblioteki;
 private:
 	string NazwaKatalogu;
 	Ksiazka* ListaKsiazek[100];
-	std::vector<Katalog*> ListaKsiazek2;
+	std::vector<Ksiazka*> ListaKsiazek2;
 
 public:
 	Katalog();
+	Katalog(string nazwaKat);
 	~Katalog();
 	void WyswietlKatalog();
 	Ksiazka* WyszukajKsiazke(string nazwKsi);
