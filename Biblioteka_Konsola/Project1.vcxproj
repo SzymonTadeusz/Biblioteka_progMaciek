@@ -65,17 +65,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="KonektorDB.cpp" />
     <ClCompile Include="Pliki cpp\Egzemplarz.cpp" />
     <ClCompile Include="Pliki cpp\Katalog.cpp" />
+    <ClCompile Include="Pliki cpp\KonektorDB.cpp" />
     <ClCompile Include="Pliki cpp\Ksiazka.cpp" />
     <ClCompile Include="Pliki cpp\main.cpp" />
     <ClCompile Include="Pliki cpp\MenadzerBiblioteki.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="KonektorDB.h" />
     <ClInclude Include="Pliki naglowkowe\Egzemplarz.h" />
     <ClInclude Include="Pliki naglowkowe\Katalog.h" />
+    <ClInclude Include="Pliki naglowkowe\KonektorDB.h" />
     <ClInclude Include="Pliki naglowkowe\Ksiazka.h" />
     <ClInclude Include="Pliki naglowkowe\MenadzerBiblioteki.h" />
   </ItemGroup>

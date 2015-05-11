@@ -2,6 +2,8 @@
 #include <iostream>
 #include <mysql.h>
 #include <sstream>
+#include "..\Pliki naglowkowe\MenadzerBiblioteki.h"
+
 using namespace std;
 
 class KonektorDB
@@ -18,6 +20,8 @@ protected:
 	string database;
 	string server;
 
+
+
 public:
 
 	void pobierzWartosciDoLogowania();
@@ -25,7 +29,7 @@ public:
 	KonektorDB();
 
 	/** Function to show tables in database */
-	void ShowTables();
+	void WykonajZapytanie(string zapytanie, MenadzerBiblioteki menadzer);
 
 	/** MySQL Destructor */
 	~KonektorDB();

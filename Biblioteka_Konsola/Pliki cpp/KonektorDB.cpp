@@ -1,4 +1,4 @@
-#include "KonektorDB.h"
+#include "..\Pliki naglowkowe\KonektorDB.h"
 
 void KonektorDB::pobierzWartosciDoLogowania()
 {
@@ -44,11 +44,11 @@ KonektorDB::KonektorDB()
 }
 
 
-void KonektorDB::ShowTables()
+void KonektorDB::WykonajZapytanie(string zapytanie, MenadzerBiblioteki menadzer)
 {
 	if (connect){
 		/** Add KonektorDB Query */
-		mysql_query(connect, "SELECT CONCAT_WS(' ',Imie, Nazwisko) From Osoba");
+		mysql_query(connect, zapytanie.c_str());
 
 		i = 0;
 

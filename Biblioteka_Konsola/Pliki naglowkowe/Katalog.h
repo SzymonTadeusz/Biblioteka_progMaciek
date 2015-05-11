@@ -13,6 +13,7 @@ using namespace std;
  //* - beletrystykê
 class Katalog {
 	friend class MenadzerBiblioteki;
+	friend class KonektorDB;
 private:
 	string NazwaKatalogu;
 	Ksiazka* ListaKsiazek[100];

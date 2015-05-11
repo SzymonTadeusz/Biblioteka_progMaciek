@@ -6,6 +6,8 @@
 #include "Egzemplarz.h"
 using namespace std;
 class Ksiazka {
+	friend class KonektorDB;
+
 private:
 	char ISBN[15];
 	std::string Tytul;

@@ -7,6 +7,8 @@
 
 class MenadzerBiblioteki
 {
+	friend class KonektorDB;
+
 private:
 	Katalog* ListaKatalogow[10];
 	std::vector<Katalog*> ListaKatalogow2;

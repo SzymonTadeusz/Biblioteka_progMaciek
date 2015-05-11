@@ -30,7 +30,7 @@
     <ClCompile Include="Pliki cpp\MenadzerBiblioteki.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="KonektorDB.cpp">
+    <ClCompile Include="Pliki cpp\KonektorDB.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -47,7 +47,7 @@
     <ClInclude Include="Pliki naglowkowe\MenadzerBiblioteki.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="KonektorDB.h">
+    <ClInclude Include="Pliki naglowkowe\KonektorDB.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
