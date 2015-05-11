@@ -36,10 +36,11 @@ vector<Ksiazka*> MenadzerBiblioteki::WyszukajKsiazke(string nazwKsi)
 void MenadzerBiblioteki::WyswietlKatalog(string nazwKat)
 {	
 	vector<Katalog*> zbiorKatalogow;
+
 	for each (Katalog* kat in this->ListaKatalogow2)
 		if (kat->GetNazwa().find(nazwKat) != string::npos) zbiorKatalogow.push_back(kat);
 	
-	if (zbiorKatalogow.empty()) cout << "Nie znaleziono katalogu o podanej nazwie" << endl;
+	if (zbiorKatalogow.empty()) cout << "Nie znaleziono katalogu o podanej nazwie." << endl;
 	else{
 		int decyzja;
 		cout << "Znaleziono katalog(i) o podanej nazwie\nczy chcesz wyswietlic zawartosc: 1 - tak, 0 - nie: ";
@@ -56,7 +57,6 @@ MenadzerBiblioteki::~MenadzerBiblioteki()
 
 void MenadzerBiblioteki::WyswietlKatalogi()
 {	
-
 }
 
 void MenadzerBiblioteki::WyswietlKatalog(int indKat)

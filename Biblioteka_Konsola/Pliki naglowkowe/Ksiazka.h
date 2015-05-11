@@ -27,7 +27,10 @@ public:
 	void WyswietlRozdzial();
 	Ksiazka();
 	Ksiazka(char[], string, string, int, string);
-	Ksiazka(char[], string, string, int, string, string, string, string[], Egzemplarz[], string);
 	Ksiazka(char[], string, string, int, string, string, string, string);
+	Ksiazka(char[], string, string, int, string, string, string, string[], Egzemplarz[], string);
+	// Zamieniæ argumentow¹ tablicê ListaEgz[] na wektor ListaEgz2
+	// Ale w sumie z tego w ogóle nie korzystamy? o.O Jest identyczne jak powy¿ej.
+	//Ksiazka(char[], string, string, int, string, string, string, string[], Egzemplarz[], string);
 	~Ksiazka();
 };

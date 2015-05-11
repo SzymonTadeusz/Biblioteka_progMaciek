@@ -49,32 +49,7 @@ Ksiazka::Ksiazka(char _ISBN[15], string _Tytul, string _Autor, int _RokWyd, stri
 	{
 		this->ListaEgz[i] = Egzemplarz();
 		// Prototype Vector
-		//this->ListaEgz2[i] = Egzemplarz();
-	}
-}
-
-Ksiazka::Ksiazka(char _ISBN[15], string _Tytul, string _Autor, int _RokWyd, string _Wydawnictwo,
-	string _Opis, string _Typ, string _Gatunek[], Egzemplarz _ListaEgz[], string _PierwszyRozdz){
-	for (int i = 0; i < 15; i++)
-	{
-		this->ISBN[i] = _ISBN[i];
-	}
-	this->Tytul = _Tytul;
-	this->Autor = _Autor;
-	this->RokWydania = _RokWyd;
-	this->Wydawnictwo = _Wydawnictwo;
-	this->Opis = _Opis;
-	this->Typ = _Typ;
-	this->PierwszyRozdz = _PierwszyRozdz;
-	for (int i = 0; i < 5; i++)
-	{
-		this->Gatunek[i] = "0";
-	}
-	for (int i = 0; i < 10; i++)
-	{
-		this->ListaEgz[i] = Egzemplarz();
-		// Prototype Vector
-		//this->ListaEgz2[i] = Egzemplarz();
+		this->ListaEgz2.push_back(Egzemplarz());
 	}
 }
 
@@ -99,7 +74,33 @@ Ksiazka::Ksiazka(char _ISBN[15], string _Tytul, string _Autor, int _RokWyd, stri
 	{
 		this->ListaEgz[i] = Egzemplarz();
 		// Prototype Vector
-		//this->ListaEgz2[i] = Egzemplarz();
+		this->ListaEgz2.push_back(Egzemplarz());
 	}
 }
 
+// Zamieniæ argumentow¹ tablicê ListaEgz[] na wektor ListaEgz2
+// Ale w sumie z tego w ogóle nie korzystamy? o.O Jest identyczne jak powy¿ej.
+Ksiazka::Ksiazka(char _ISBN[15], string _Tytul, string _Autor, int _RokWyd, string _Wydawnictwo,
+	string _Opis, string _Typ, string _Gatunek[], Egzemplarz _ListaEgz[], string _PierwszyRozdz){
+	for (int i = 0; i < 15; i++)
+	{
+		this->ISBN[i] = _ISBN[i];
+	}
+	this->Tytul = _Tytul;
+	this->Autor = _Autor;
+	this->RokWydania = _RokWyd;
+	this->Wydawnictwo = _Wydawnictwo;
+	this->Opis = _Opis;
+	this->Typ = _Typ;
+	this->PierwszyRozdz = _PierwszyRozdz;
+	for (int i = 0; i < 5; i++)
+	{
+		this->Gatunek[i] = "0";
+	}
+	for (int i = 0; i < 10; i++)
+	{
+		this->ListaEgz[i] = Egzemplarz();
+		// Prototype Vector
+		this->ListaEgz2.push_back(Egzemplarz());
+	}
+}

@@ -40,19 +40,13 @@ Ksiazka* Katalog::WyszukajKsiazke(string nazwKsi)
 		if (ListaKsiazek2[i] != NULL)
 		{
 			NazwaBiezacejKsiazki = ListaKsiazek2[i]->getTytul();
-			// Prototype Vector
-			//NazwaBiezacejKsiazki2 = ListaKsiazek2[i]->getTytul();
 
 			for (unsigned int j = 0; j < NazwaBiezacejKsiazki.length(); j++)
 			{
 				NazwaBiezacejKsiazki[j] = tolower(NazwaBiezacejKsiazki[j]);
-				// Prototype Vector
-				//NazwaBiezacejKsiazki2[j] = tolower(NazwaBiezacejKsiazki2[j]);
 			}
 
 			if (NazwaBiezacejKsiazki == nazwKsi) WynikPoszukiwan = ListaKsiazek2[i];
-			// Prototype Vector
-			//if (NazwaBiezacejKsiazki2 == nazwKsi) WynikPoszukiwan2 = ListaKsiazek2[i];
 		}
 
 		i++;
