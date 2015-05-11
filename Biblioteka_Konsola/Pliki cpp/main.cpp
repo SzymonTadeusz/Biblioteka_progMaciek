@@ -3,6 +3,7 @@
 #include "../Pliki naglowkowe/Katalog.h"
 #include "../Pliki naglowkowe/Ksiazka.h"
 #include "../Pliki naglowkowe/MenadzerBiblioteki.h"
+#include "../Pliki naglowkowe/KonektorDB.h"
 
 
 using namespace std;
