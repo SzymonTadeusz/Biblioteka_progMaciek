@@ -5,6 +5,7 @@
 #include <assert.h>
 
 #include "../Pliki naglowkowe/MenadzerBiblioteki.h"
+#include "../Pliki naglowkowe/KonektorDB.h"
 
 using namespace std;
 
@@ -74,6 +75,9 @@ void MenadzerBiblioteki::WyswietlRozdzial(int indKat, int indKsi)
 
 void MenadzerBiblioteki::WyswietlMenuGlowne()
 {
+	KonektorDB konektor; //w konstruktorze wywolywana jest metoda pobieraj¹ca dane uzytkownika
+	cout << "Nacisnij dowolny klawisz aby kontynuowac";
+	getchar();
 	int decyzja = 1;
 	while (decyzja != 0)
 	{
