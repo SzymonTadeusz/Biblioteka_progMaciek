@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <winsock.h>
 #include <mysql.h>
 #include <sstream>
 #include "..\Pliki naglowkowe\MenadzerBiblioteki.h"
