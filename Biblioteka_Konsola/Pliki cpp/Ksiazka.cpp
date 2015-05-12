@@ -15,7 +15,7 @@ void Ksiazka::WyswietlKsiazke()
 {
 	cout << "Tytul: " << this->getTytul() << endl;
 	cout << "Autor: " << this->getAutor() << endl;
-	cout << this->Wydawnictwo << ", ";
+	if(this->Wydawnictwo!="") cout << this->Wydawnictwo << ", ";
 	cout << this->RokWydania << endl;
 
 	cout << "\nCzy chcesz wyswietlic jej 1. rozdzial? 1 - tak, 0 - nie: ";

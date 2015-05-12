@@ -91,7 +91,7 @@ vector<Ksiazka*> KonektorDB::WyszukajKsiazke(string nazwaKsiazki)
 		zapytanie += "Where tytul LIKE \"%";
 		zapytanie += nazwaKsiazki;
 		zapytanie += "%\"";
-		cout << zapytanie;
+		//cout << zapytanie;
 		mysql_query(connect, zapytanie.c_str());
 		i = 0;
 
@@ -102,7 +102,7 @@ vector<Ksiazka*> KonektorDB::WyszukajKsiazke(string nazwaKsiazki)
 			my_ulonglong numrows = mysql_num_rows(res_set);
 			int num_fields = mysql_num_fields(res_set);
 
-			cout << "\nDB o nazwie: " << this->database << endl;
+			//5cout << "\nDB o nazwie: " << this->database << endl;
 
 			while (((row = mysql_fetch_row(res_set)) != NULL))
 			{
@@ -115,13 +115,13 @@ vector<Ksiazka*> KonektorDB::WyszukajKsiazke(string nazwaKsiazki)
 					//{
 					//}
 
-						if (i==0)
+						if (i==0)	//Kolumna tytul
 							wstawiana->Tytul = row[i];
-						if (i==1)
+						if (i==1)   //Kolumna autor
 							wstawiana->Autor = row[i];
-						if (i==2)
+						if (i==2)   //Kolumna rokWydania
 							wstawiana->RokWydania = atoi(row[i]);
-						printf("%s  ", row[i] ? row[i] : "NULL");
+						//printf("%s  ", row[i] ? row[i] : "NULL");
 
 				}
 					printf("\n");
