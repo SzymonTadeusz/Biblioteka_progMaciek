@@ -78,6 +78,10 @@ Ksiazka::Ksiazka(char _ISBN[15], string _Tytul, string _Autor, int _RokWyd, stri
 	}
 }
 
+Ksiazka::Ksiazka(){}
+Ksiazka::~Ksiazka(){}
+
+
 // Zamieniæ argumentow¹ tablicê ListaEgz[] na wektor ListaEgz2
 // Ale w sumie z tego w ogóle nie korzystamy? o.O Jest identyczne jak powy¿ej.
 Ksiazka::Ksiazka(char _ISBN[15], string _Tytul, string _Autor, int _RokWyd, string _Wydawnictwo,

@@ -102,6 +102,7 @@ void MenadzerBiblioteki::WyswietlMenuGlowne()
 		{
 		case 1:
 		{
+			konektor.ListujKatalogi(this);
 			cout << "Katalogi: \n" << endl;
 			for each(Katalog* kat in this->ListaKatalogow2)
 				cout <<  kat->GetNazwa() << endl;
@@ -139,7 +140,8 @@ void MenadzerBiblioteki::WyswietlMenuGlowne()
 		cin.sync();
 		getline(std::cin, podanaNazwa);
 		vector<Ksiazka*> zbior;
-		zbior = this->WyszukajKsiazke(podanaNazwa);
+		//zbior = this->WyszukajKsiazke(podanaNazwa);
+		zbior = konektor.WyszukajKsiazke(podanaNazwa);
 		if (zbior.empty()) cout << "Brak takiej ksiazki w bazie!";
 		else 
 			for each (Ksiazka* ks in zbior)
@@ -151,6 +153,7 @@ void MenadzerBiblioteki::WyswietlMenuGlowne()
 		}
 		case 0:
 		{
+		konektor.~KonektorDB();
 		exit(0);
 		break;
 		}

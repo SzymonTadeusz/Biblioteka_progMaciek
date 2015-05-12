@@ -13,6 +13,7 @@ protected:
 	MYSQL *connect;
 	MYSQL_RES *res_set;
 	MYSQL_ROW row;
+	MYSQL_FIELD *field;
 
 	unsigned int i;
 	string user;
@@ -29,8 +30,8 @@ public:
 	KonektorDB();
 
 	/** Function to show tables in database */
-	void WykonajZapytanie(string zapytanie, MenadzerBiblioteki menadzer);
-
+	void ListujKatalogi(MenadzerBiblioteki* menadzer);
+	vector<Ksiazka*> WyszukajKsiazke(string nazwaKsiazki);
 	/** MySQL Destructor */
 	~KonektorDB();
 };
